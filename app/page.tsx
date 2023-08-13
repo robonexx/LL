@@ -12,13 +12,13 @@ export default async function Home() {
   return (
     <main className='flex flex-col items-center justify-between p-24'>
       <div>
-        <h1 className='text-4xl md:text-6xl font-extrabold'>
+        <h1 className='text-3xl md:text-6xl font-extrabold'>
           Welcome to
           <span
             className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent ${audiowide.className}`}
           >
             {' '}
-            LockerLegends International <span className='text-xs text-gray-300'>Edition 2024</span>
+            LockerLegends International <span className='text-xs text-slate-800'>Edition 2024</span>
           </span>
         </h1>
         <p className='mt-3 text-l text-gray-400'>

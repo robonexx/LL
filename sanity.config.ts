@@ -5,13 +5,17 @@ import blog from './sanity/Schemas/blog-schema'
 import page from './sanity/Schemas/page-schema' */
 import schemas from './sanity/schemas'
 
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID 
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET 
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION 
+
 
 const config = defineConfig<any>({
-    projectId: "iys8bmlh",
-    dataset: "production",
+    projectId: projectId,
+    dataset: dataset,
     title: "ll",
     basePath: "/admin",
-    apiVersion: "2023-08-13",
+    apiVersion: apiVersion,
     plugins: [deskTool()],
     schema: {
         types: schemas
