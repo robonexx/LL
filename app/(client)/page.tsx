@@ -11,19 +11,6 @@ export default async function Home() {
   return (
     <main className='flex flex-col items-center justify-between p-24'>
       <div>
-        <h1 className='text-3xl md:text-6xl font-extrabold'>
-          Welcome to
-          <span
-            className={`bg-gradient-to-r from-orange-400 via-yellow-500 to-red-600 bg-clip-text text-transparent ${audiowide.className}`}
-          >
-            {' '}
-            Rubadub Style{' '}
-            <span className='text-xs text-slate-800'>Edition 2024</span>
-          </span>
-        </h1>
-        <p className='mt-3 text-l text-gray-400'>
-          Hello everyone! We are happy to have you here with us! :D
-        </p>
         <h2 className='mt-24 font-bold text-gray-700 text-3xl'>
           Latest Editorials
         </h2>
