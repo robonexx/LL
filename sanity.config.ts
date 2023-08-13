@@ -1,9 +1,13 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
+import { visionTool } from '@sanity/vision'
 /* import project from './sanity/Schemas/project-schema'
 import blog from './sanity/Schemas/blog-schema'
 import page from './sanity/Schemas/page-schema' */
 import schemas from './sanity/schemas'
+import { brandTheme } from './theme'
+import StudioNavbar from './components/StudioNavbar'
+import Logo from './components/StudioLogo'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID 
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET 
@@ -11,15 +15,23 @@ const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION
 
 
 const config = defineConfig<any>({
-    projectId: projectId,
-    dataset: dataset,
-    title: "ll",
+    projectId,
+    dataset,
+    name: "LockerLegends_Studio",
+    title: "Rubadub Style",
     basePath: "/admin",
-    apiVersion: apiVersion,
-    plugins: [deskTool()],
+    apiVersion,
+    plugins: [deskTool(), visionTool()],
     schema: {
-        types: schemas
+        types: schemas,
     },
+    studio: {
+        components: {
+            logo: Logo,
+            navbar: StudioNavbar,
+        }
+    },
+    theme: brandTheme,
 })
 
 export default config

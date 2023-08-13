@@ -4,6 +4,6 @@ import config from '@/sanity.config';
 
 // importing all setting from config file to be used and passed to the Next app
 
-export default function AdminPage() {
+export default function StudioPage() {
   return <NextStudio config={config} />;
 }

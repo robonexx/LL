@@ -1,12 +1,13 @@
 import { createClient, groq } from "next-sanity";
-import { Project } from "@/types/Project";
-import clientConfig from './config/clientconfig'
-import { Page } from "@/types/Page";
-import { Blog } from "@/types/Blog";
+import { Project } from "@/sanity/types/Project";
+import { Page } from "@/sanity/types/Page";
+import { Post } from "@/sanity/types/Post";
+
+import client from "@/client";
 
 
 export async function getProjects(): Promise<Project[]> {
-  return createClient(clientConfig).fetch(
+  return createClient(client).fetch(
     groq`*[_type == "project"]{
       _id,
       _createdAt,
@@ -20,7 +21,7 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 export async function getProject(slug: string): Promise<Project> {
-  return createClient(clientConfig).fetch(
+  return createClient(client).fetch(
     groq`*[_type == "project" && slug.current == $slug][0]{
       _id,
       _createdAt,
@@ -35,7 +36,7 @@ export async function getProject(slug: string): Promise<Project> {
 }
 
 export async function getPages(): Promise<Page[]> {
-  return createClient(clientConfig).fetch(
+  return createClient(client).fetch(
     groq`*[_type == "page"]{
       _id,
       _createdAt,
@@ -46,7 +47,7 @@ export async function getPages(): Promise<Page[]> {
 }
 
 export async function getPage(slug: string): Promise<Page> {
-  return createClient(clientConfig).fetch(
+  return createClient(client).fetch(
     groq`*[_type == "page" && slug.current == $slug][0]{
       _id,
       _createdAt,
@@ -58,30 +59,33 @@ export async function getPage(slug: string): Promise<Page> {
   )
 }
 
-export async function getBlogs(): Promise<Blog[]> {
-    return createClient(clientConfig).fetch(
-      groq`*[_type == "blog"]{
+export async function getPosts(): Promise<Post[]> {
+    return createClient(client).fetch(
+      groq`*[_type == "post"]{
         _id,
         _createdAt,
-        name,
+        title,
+        categories,
         "slug": slug.current,
         "image": image.asset->url,
-        url,
-        content
+        "author": author->{name, picture},
+        body
       }`
     )
   }
   
-  export async function getBlog(slug: string): Promise<Blog> {
-    return createClient(clientConfig).fetch(
-      groq`*[_type == "blog" && slug.current == $slug][0]{
+  export async function getPost(slug: string): Promise<Post> {
+    return createClient(client).fetch(
+      groq`*[_type == "post" && slug.current == $slug][0]{
         _id,
         _createdAt,
-        name,
+        title,
+        categories,
         "slug": slug.current,
         "image": image.asset->url,
         url,
-        content
+        "author": author->{name, picture},
+        body
       }`,
       { slug }
     )

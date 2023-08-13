@@ -1,14 +1,14 @@
-const blog = {
-    name: 'blog',
+const post = {
+    name: 'post',
 
-    title: 'Blogs',
+    title: 'Posts',
 
     type: 'document',
 
     fields: [
         {
-            name: "name",
-            title: "Name",
+            name: "title",
+            title: "Title",
             type: "string",
         },
         {
@@ -16,7 +16,7 @@ const blog = {
             title: "Slug",
             type: "slug",
             options: {
-                source: 'name'
+                source: 'title'
             }
         },
         {
@@ -35,12 +35,25 @@ const blog = {
             ]
         },
         {
-            name: "content",
-            title: "Content",
+            name: "body",
+            title: "Body",
             type: "array",
             of: [{ type: 'block'}],
+        },
+        {
+            name: 'categories',
+            title: 'Categories',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'category' } }],
+        },
+        {
+            name: 'author',
+            title: 'Author',
+            type: 'reference',
+            to: {type: 'author'},
         }
+
     ]
 }
 
-export default blog
+export default post
