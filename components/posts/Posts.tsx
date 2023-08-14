@@ -4,37 +4,36 @@ import Image from 'next/image';
 /* import type { SanityDocument } from "@sanity/client"; */
 
 export default function Posts({ posts = [] }: { posts: PostType[] }) {
-  const heading = posts?.length === 1 ? `1 Post` : `${posts.length} Posts`;
+    const heading = posts?.length === 1 ? `1 Post` : `${posts.length} Posts`;
 
   return (
-    <main className='p-10 flex flex-col'>
+    <main className=' md:p-10 flex flex-col'>
       <h1 className='text-2xl p-4 font-bold'>{heading}</h1>
-      <section className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
-        {posts.map(({ slug, _id, image, title, author }) => (
-          <>
-            <div className='flex flex-col justify-center items-center'>
-              <Link
-                href={`/${slug}`}
-                key={_id}
-                className='rounded p-4 hover:scale-105 hover:border-blue-500 relative w-[200px] h-[200px] md:w-[240px] md:h-[240px] lg:w-[300px] lg:h-[300px] shadow bg-slate-900 transition-all ease-in-out'
-              >
-                {image && (
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className='object-cover relative gap-4 rounded border border-gray-500'
-                  />
-                )}
-              </Link>
-              <p className='text-xs text-thin font-mono text-black'>
+      <section className='group grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
+        {posts.map(({ slug, _id, image, title, author, body }) => (
+          <div
+            key={_id}
+            className='border-8 border-black relative w-full h-80 drop-shadow-xl md:group-hover:scale-105 transition-transform duration-300 ease-out cursor-pointer flex-col flex overflow-hidden py-10'
+          >
+            <Link href={`/${slug}`} className='w-full h-full'>
+              {image && (
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className='object-cover object-left lg:object-center hover:scale-110 transition-all duration-300'
+                />
+              )}
+            </Link>
+            <div className='absolute bottom-0 left-0 bg-black py-1 px-2 w-full md:max-h-15 md:py-1 md:px-0 flex flex-col items-left'>
+              <p className='text-xs text-thin font-mono text-white relative'>
                 Written by: {author.name}
               </p>
-              <div className='flex items-center z-10 rounded mt-2 font-extrabold bg-gradient-to-r from-orange-400 via-indigo-500 to-red-600 bg-clip-text text-transparent shadow-lg p-2'>
+              <div className='flex items-center z-10 rounded font-semibold md:font-bold lg:font-extrabold bg-gradient-to-r from-orange-400 via-indigo-500 to-red-600 bg-clip-text text-transparent'>
                 {title}
               </div>
             </div>
-          </>
+          </div>
         ))}
       </section>
     </main>
