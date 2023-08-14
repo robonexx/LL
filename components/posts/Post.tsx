@@ -28,3 +28,12 @@ export default function Post({ post }: { post: PostType }) {
     </main>
   );
 }
+
+/* 
+if preview mode has issues try addin one of these
+
+{post?.title ? <h1>{post.title}</h1> : <h1>Untitled</h1>}
+
+{post?.title ? <h1>{post.title}</h1> : null}
+
+*/
