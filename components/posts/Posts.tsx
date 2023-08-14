@@ -1,20 +1,18 @@
-import { Post } from '@/sanity/types/Post';
+import { PostType } from '@/sanity/types/Post';
 import Link from 'next/link';
 import Image from 'next/image';
 /* import type { SanityDocument } from "@sanity/client"; */
 
-export default function Posts({ posts = [] }: { posts: Post[] }) {
-  const title = posts.length === 1 ? `1 Post` : `${posts.length} Posts`;
-
-  console.log(posts);
+export default function Posts({ posts = [] }: { posts: PostType[] }) {
+  const heading = posts?.length === 1 ? `1 Post` : `${posts.length} Posts`;
 
   return (
-    <main className='container mx-auto grid grid-cols-1'>
-      <h1 className='text-2xl p-4 font-bold'>{title}</h1>
-      <section className='group m-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
+    <main className='p-10 flex flex-col'>
+      <h1 className='text-2xl p-4 font-bold'>{heading}</h1>
+      <section className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
         {posts.map(({ slug, _id, image, title, author }) => (
           <>
-            <div className='flex flex-col max-h-30 justify-center items-center'>
+            <div className='flex flex-col justify-center items-center'>
               <Link
                 href={`/${slug}`}
                 key={_id}
