@@ -7,12 +7,12 @@ const Banner = () => {
         <h1 className='text-5xl md:text-7xl font-extrabold'>
           THE LOCKERLEGENDS{' '}
         </h1>
-        <h2 className='mt-5 md:mt-0 text-gray-800'>
+        <h2 className='mt-5 md:mt-0 text-gray-800 font-semibold'>
           Welcome to{'  '}
           <span className='underline decoration-4 decoration-[#fa4b0a] font-semibold'>
             every LOCKERS
           </span>{' '}
-          first website of knowledge
+          first connection to the pioneers
         </h2>
       </div>
       <p className='mt-5 md:mt-2 max-w-sm text-gray-800'>

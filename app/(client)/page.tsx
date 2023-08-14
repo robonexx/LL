@@ -1,12 +1,31 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { Audiowide } from 'next/font/google';
 import { getPosts } from '@/sanity/sanity-utils';
+import Posts from '@/components/posts/Posts';
+import { draftMode } from 'next/headers';
+import { getCachedClient } from '@/lib/getClient';
+import { postsQuery } from '@/lib/sanity.queries';
+
+// preview
+import PreviewPosts from '@/components/previewposts/PreviewPosts';
+import PreviewProvider from '@/components/previewprovider/PreviewProvider';
 
 const audiowide = Audiowide({ subsets: ['latin-ext'], weight: '400' });
 
 export default async function Home() {
   const posts = await getPosts();
+
+  const preview = draftMode().isEnabled
+    ? { token: process.env.SANITY_API_READ_TOKEN }
+    : undefined;
+  const Prevposts = await getCachedClient(preview)(postsQuery);
+
+  if (preview && preview.token) {
+    return (
+      <PreviewProvider token={preview.token}>
+        <PreviewPosts posts={Prevposts} />
+      </PreviewProvider>
+    );
+  }
 
   return (
     <main className='flex flex-col items-center justify-between p-24'>
@@ -16,7 +35,8 @@ export default async function Home() {
         </h2>
 
         <div className='mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-10 place-content-center'>
-          {posts.map(({ slug, _id, image, title, author }) => (
+          <Posts posts={posts} />
+          {/*  {posts.map(({ slug, _id, image, title, author }) => (
             <>
               <div className='flex flex-col max-h-30 justify-center items-center'>
                 <Link
@@ -41,7 +61,7 @@ export default async function Home() {
                 </div>
               </div>
             </>
-          ))}
+          ))} */}
         </div>
       </div>
     </main>

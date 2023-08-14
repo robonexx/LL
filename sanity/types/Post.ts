@@ -2,13 +2,13 @@ import { PortableTextBlock } from "sanity";
 
 import { Author } from "./Author";
 
-export type Post = {
+export type PostType = {
     _id: string;
     _createdAt: Date;
     title: string;
     slug: string;
     image: string;
-    url: string;
+    url?: string;
     categories?: [];
     author: Author;
     body: PortableTextBlock[];

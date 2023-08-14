@@ -59,6 +59,36 @@ export async function getPage(slug: string): Promise<Page> {
   )
 }
 
+// Get all posts
+export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
+    _id,
+    _createdAt,
+    title,
+    categories,
+    "slug": slug.current,
+    "image": image.asset->url,
+    "author": author->{name, picture},
+    body
+  }`;
+
+// Get a single post by its slug
+export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
+    _id,
+        _createdAt,
+        title,
+        categories,
+        "slug": slug.current,
+        "image": image.asset->url,
+        url,
+        "author": author->{name, picture},
+        body
+  }`;
+
+// Get all post slugs
+export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }`;
+
 export async function getPosts(): Promise<PostType[]> {
     return createClient(client).fetch(
       groq`*[_type == "post"]{
