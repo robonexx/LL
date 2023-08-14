@@ -5,7 +5,7 @@ const props = {
     "--client-black": "#121212",
     "--brand-color": "#ff5f1f",
     "--client-color-1": "#ffe5b4",
-    "--client-color-2": "#3C3C3C",
+    "--client-color-2": "#181818",
     "--client-color-3": "#ffbf00"
 };
 
