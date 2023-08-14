@@ -1,13 +1,11 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { visionTool } from '@sanity/vision'
-/* import project from './sanity/Schemas/project-schema'
-import blog from './sanity/Schemas/blog-schema'
-import page from './sanity/Schemas/page-schema' */
 import schemas from './sanity/schemas'
 import { brandTheme } from './theme'
 import StudioNavbar from './components/StudioNavbar'
 import Logo from './components/StudioLogo'
+import { defaultDocumentNode } from './sanity/desk/defaultDocumentNode'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID 
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET 
@@ -21,7 +19,7 @@ const config = defineConfig<any>({
     title: "Rubadub Style",
     basePath: "/admin",
     apiVersion,
-    plugins: [deskTool(), visionTool()],
+    plugins: [deskTool({ defaultDocumentNode }), visionTool()],
     schema: {
         types: schemas,
     },
