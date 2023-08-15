@@ -37,7 +37,7 @@ export async function getProject(slug: string): Promise<Project> {
 
 export async function getPages(): Promise<Page[]> {
   return createClient(client).fetch(
-    groq`*[_type == "page"]{
+    groq`*[_type == "pagest"]{
       _id,
       _createdAt,
       title,

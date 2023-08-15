@@ -6,6 +6,7 @@ import { brandTheme } from './theme'
 import StudioNavbar from './components/StudioNavbar'
 import Logo from './components/StudioLogo'
 import { defaultDocumentNode } from './sanity/desk/defaultDocumentNode'
+import { deskStructure } from './sanity/desk/deskStructure'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID 
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET 
@@ -19,7 +20,13 @@ const config = defineConfig<any>({
     title: "Rubadub Style",
     basePath: "/admin",
     apiVersion,
-    plugins: [deskTool({ defaultDocumentNode }), visionTool()],
+    useCdn: false,
+    plugins: [
+        deskTool({
+            defaultDocumentNode,
+            structure: deskStructure,
+        }),
+        visionTool()],
     schema: {
         types: schemas,
     },

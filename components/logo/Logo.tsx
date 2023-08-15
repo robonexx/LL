@@ -12,7 +12,9 @@ const Logo = (props: any) => {
         alt='logo'
         src={IMG}
       />
+      <span className='px-1 font-semibold'>
       {props.children}
+      </span>
     </div>
   );
 };

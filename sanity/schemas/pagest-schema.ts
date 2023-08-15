@@ -1,6 +1,6 @@
-const page = {
-    name: "page",
-    title: "Pages",
+const pagest = {
+    name: "pagest",
+    title: "Pagest",
     type: "document",
     fields: [
       {
@@ -25,4 +25,4 @@ const page = {
     ]
   }
   
-  export default page;
+  export default pagest;
