@@ -17,7 +17,7 @@ const config = defineConfig<any>({
     projectId,
     dataset,
     name: "LockerLegends_Studio",
-    title: "Rubadub Style",
+    title: "Lock it up",
     basePath: "/admin",
     apiVersion,
     useCdn: false,

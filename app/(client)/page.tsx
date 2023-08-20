@@ -34,10 +34,6 @@ export default async function Home() {
   return (
     <main className='w-full min-h-full flex flex-col bg-gray-800'>
       <div>
-        <h2 className='mt-24 font-bold text-gray-700 text-3xl'>
-          Latest Editorials
-        </h2>
-
         <>
           <Posts posts={posts} />
           {/*  {posts.map(({ slug, _id, image, title, author }) => (

@@ -33,9 +33,9 @@ export default async function postPage({ params }: Props) {
   }
 
   return (
-    <>
+    <main className='flex items-center justify-center w-full h-full'>
       <Post post={post} />
-    </>
+    </main>
     /*  <div className='p-20 container mx-auto prose prose-lg'>
       <header className='text-center'>
         <h1 className='bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold'>
