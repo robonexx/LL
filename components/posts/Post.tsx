@@ -6,7 +6,7 @@ import { PostType } from '@/sanity/types/Post';
 
 export default function Post({ post }: { post: PostType }) {
   return (
-    <main className='p-10 container mx-auto prose prose-lg justify-center md:justify-normal'>
+    <main className='relative h-96 w-full border-2 border-gray-500 rounded-xs p-1 hover:scale-105 hover:border-blue-500 transition shadow-lg'>
       <header className='text-center'>
         <h1 className='bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold'>
           {post?.title}

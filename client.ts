@@ -7,7 +7,7 @@ const client = {
     projectId: projectId,
     dataset: dataset,
   apiVersion: apiVersion,
-  useCdn: true,
+  useCdn: false,
  
   }
   

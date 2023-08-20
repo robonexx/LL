@@ -4,9 +4,7 @@ const Banner = () => {
   return (
     <div className='p-2 flex flex-col lg:flex-row lg:space-x-5 justify-between px-10 py-5 mb-10'>
       <div className='text-black'>
-        <h1 className='text-5xl md:text-7xl font-extrabold'>
-          THE LOCKERLEGENDS{' '}
-        </h1>
+        <h1 className='text-5xl md:text-7xl font-extrabold'>LOCKERLEGENDS </h1>
         <h2 className='mt-5 md:mt-0 text-gray-800 font-semibold'>
           Welcome to{'  '}
           <span className='underline decoration-4 decoration-[#fa4b0a] font-semibold'>

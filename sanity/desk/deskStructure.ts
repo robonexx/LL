@@ -1,4 +1,4 @@
-import { Globe, Browsers, Compass, SquareHalfBottom } from 'phosphor-react'
+import { Globe, Browsers, Compass, SquareHalfBottom, Article, Cardholder } from 'phosphor-react'
 
 import { StructureBuilder, StructureResolverContext } from 'sanity/desk'
 
@@ -16,6 +16,18 @@ export const deskStructure: StructureResolver = (S, context) =>
         .title('Pages')
         .icon(Browsers)
         .child(S.documentTypeList('page').title('Pages')),
+      S.divider(),
+      // Posts ------------------
+      S.listItem()
+        .title('Posts')
+        .icon(Article)
+        .child(S.documentTypeList('post').title('Posts')),
+      S.divider(),
+      // Projects ------------------
+      S.listItem()
+        .title('Projects')
+        .icon(Cardholder)
+        .child(S.documentTypeList('project').title('Projects')),
       S.divider(),
       // GLOBAL ------------------
       S.listItem()

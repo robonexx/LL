@@ -11,6 +11,10 @@ import PreviewProvider from '@/components/previewprovider/PreviewProvider';
 
 const audiowide = Audiowide({ subsets: ['latin-ext'], weight: '400' });
 
+export const revalidate = 20;
+export const fetchCache = 'force-no-store';
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const posts = await getPosts();
 
@@ -28,13 +32,13 @@ export default async function Home() {
   }
 
   return (
-    <main className='flex flex-col items-center justify-between p-24'>
+    <main className='w-full min-h-full flex flex-col bg-gray-800'>
       <div>
         <h2 className='mt-24 font-bold text-gray-700 text-3xl'>
           Latest Editorials
         </h2>
 
-        <div className='mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-10 place-content-center'>
+        <>
           <Posts posts={posts} />
           {/*  {posts.map(({ slug, _id, image, title, author }) => (
             <>
@@ -62,7 +66,7 @@ export default async function Home() {
               </div>
             </>
           ))} */}
-        </div>
+        </>
       </div>
     </main>
   );

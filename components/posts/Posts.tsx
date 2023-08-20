@@ -7,13 +7,14 @@ export default function Posts({ posts = [] }: { posts: PostType[] }) {
   const heading = posts?.length === 1 ? `1 Post` : `${posts.length} Posts`;
 
   return (
-    <main className=' md:p-10 flex flex-col'>
+    <div className='max-w-full min-h-full overflow-hidden grid place-content-center'>
       <h1 className='text-2xl p-4 font-bold'>{heading}</h1>
-      <section className='group grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
+      <section className='w-full h-full group grid md:grid-cols-2 lg:grid-cols-3 gap-15'>
         {posts.map(({ slug, _id, image, title, author, _createdAt }) => (
           <div
             key={_id}
-            className='border-8 border-black relative w-full h-80 drop-shadow-xl md:group-hover:scale-105 transition-transform duration-300 ease-out cursor-pointer flex-col flex overflow-hidden py-10'
+            className='m-4 border-8 border-black relative w-96 h-64 drop-shadow-xl md:group-hover:scale-105 transition-transform duration-300 ease-out cursor-pointer flex-col flex overflow-hidden py-10
+            gap-10 md:gap-15'
           >
             <Link href={`/${slug}`} className='w-full h-full'>
               {image && (
@@ -21,7 +22,7 @@ export default function Posts({ posts = [] }: { posts: PostType[] }) {
                   src={image}
                   alt={title}
                   fill
-                  className='object-cover object-left lg:object-center hover:scale-110 transition-all duration-300'
+                  className='object-cover hover:scale-110 transition-all duration-300'
                 />
               )}
             </Link>
@@ -51,6 +52,6 @@ export default function Posts({ posts = [] }: { posts: PostType[] }) {
           </div>
         ))}
       </section>
-    </main>
+    </div>
   );
 }
