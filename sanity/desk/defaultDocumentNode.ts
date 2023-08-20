@@ -18,10 +18,3 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}
   }
 }
 
-/* 
-
-// URL: (doc: any) => doc?.slug?.current 
-//   ? `http://localhost:3000/api/preview?slug=${doc.slug.current}`
-//  : `http://localhost:3000/api/preview`,
-
-*/
