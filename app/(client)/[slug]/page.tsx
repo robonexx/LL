@@ -12,6 +12,10 @@ type Props = {
   params: { slug: string };
 };
 
+export const revalidate = 20;
+export const fetchCache = 'force-no-store';
+export const dynamic = 'force-dynamic';
+
 export default async function postPage({ params }: Props) {
   const slug = params.slug;
   const post = await getPost(slug);
