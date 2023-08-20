@@ -17,7 +17,7 @@ const config = defineConfig<any>({
     projectId,
     dataset,
     name: "LockerLegends_Studio",
-    title: "Lock it up",
+    title: "LockerLegends",
     basePath: "/admin",
     apiVersion,
     useCdn: false,
