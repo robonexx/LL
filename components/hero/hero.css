@@ -1,0 +1,82 @@
+.hero {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  display: grid;
+  place-content: center;
+  color: #f8f8f8;
+  background-color: rgba(0, 0, 0, 0.425);
+}
+
+.wrapper {
+  width: 75%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 45%;
+}
+
+.content {
+  display: block;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 2.75vw, 5rem);
+  text-transform: uppercase;
+  margin-bottom: clamp(1rem, 1.7vw, 2rem);
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.425);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2vw, 3rem);
+  margin-bottom: clamp(0.75rem, 1.25vw, 1.5rem);
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.425);
+}
+
+p {
+  font-size: clamp(0.8rem, 1.25vw, 1.25rem);
+  line-height: 1rem;
+  letter-spacing: 1px;
+  max-width: 80%;
+  margin-bottom: clamp(0.75rem, 1.25vw, 1.5rem);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0.75);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.buttonsWrapper {
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 60svh;
+  }
+  .wrapper {
+    width: 60%;
+    padding-top: 5%;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  .buttonsWrapper {
+    display: flex;
+  }
+}
