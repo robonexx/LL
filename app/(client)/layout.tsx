@@ -27,9 +27,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${roboto.className}`}>
-        <Sidebar />
         <div className='flex'>
-          
+          <Sidebar />
           <main className='flex-1'>
             <PageLayoutWrapper>
               <Header />

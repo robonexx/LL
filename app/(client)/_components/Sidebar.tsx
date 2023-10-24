@@ -12,11 +12,11 @@ import Logo from '@/components/logo/Logo';
 
 const Sidebar = () => {
   return (
-    <div className='md:w-60 bg-white h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex'>
+    <div className='md:w-60 bg-[#ededed] h-screen flex-1 fixed border-r border-zinc-100 hidden md:flex'>
       <div className='flex flex-col space-y-6 w-full'>
         <Link
           href='/'
-          className='flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-200 h-12 w-full'
+          className='flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-100 h-12 w-full'
         >
           <Logo />
           <span className='font-bold text-xl hidden md:flex'>LockerLegends</span>
@@ -47,7 +47,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
         <>
           <button
             onClick={toggleSubMenu}
-            className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 ${
+            className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:bg-gray-200 ${
               pathname.includes(item.path) ? 'bg-zinc-100' : ''
             }`}
           >
@@ -69,7 +69,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
                     key={idx}
                     href={subItem.path}
                     className={`${
-                      subItem.path === pathname ? 'font-bold' : ''
+                      subItem.path === pathname ? 'font-bold h-full w-full bg-zinc-200 hover:bg-gray-200 rounded-md p-2' : ''
                     }`}
                   >
                     <span>{subItem.title}</span>
@@ -82,8 +82,8 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
       ) : (
         <Link
           href={item.path}
-          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-zinc-100 ${
-            item.path === pathname ? 'bg-zinc-100' : ''
+          className={`flex flex-row space-x-4 items-center p-2 rounded-md hover:bg-gray-200 ${
+            item.path === pathname ? 'bg-zinc-200' : ''
           }`}
         >
           <Icon icon={`lucide:${item.icon}`} width='24' height='24' />

@@ -7,7 +7,7 @@ import heroImg from '@/public/derbyhero.png';
 
 const Hero = () => {
   return (
-    <div className='relative flex h-4/5 mb-32 items-center justify-between gap-8 px-6 pt-14 text-neutral-900 sm:pl-20 sm:pr-20 lg:pr-0'>
+    <div className='relative w-full flex h-4/5 mb-32 items-center justify-between gap-8 px-6 pt-14 text-neutral-900 sm:pl-20 sm:pr-20 lg:pr-0'>
       <div>
         <h1 className='font-heading text-3xl font-bold md:text-5xl'>
           OFFICIAL “LOCKING” PIONEERS WEBSITE of the street dance pioneers

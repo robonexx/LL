@@ -33,11 +33,10 @@ export default async function Home() {
   }
 
   return (
-    <main className='w-full min-h-full flex flex-col'>
-      <div>
+      <div className='w-full min-h-full flex flex-col relative'>
         <>
           <Hero />
-          {/*  <Posts posts={posts} /> */}
+          <Posts posts={posts} />
           {/*  {posts.map(({ slug, _id, image, title, author }) => (
             <>
               <div className='flex flex-col max-h-30 justify-center items-center'>
@@ -69,6 +68,5 @@ export default async function Home() {
           <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
         </>
       </div>
-    </main>
   );
 }
