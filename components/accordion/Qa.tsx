@@ -33,7 +33,8 @@ const QA: React.FC<QAProps> = ({
       transition={{ duration: 0.3 }}
     >
       <button
-        className='w-full flex items-center justify-between px-2 py-1 border-none rounded-md text-lg cursor-pointer bg-gray-200 hover:bg-gray-300 hover:shadow-md transition-all duration-300'
+        className={`w-full flex items-center justify-between px-2 py-1 border-none  text-lg cursor-pointer
+        shadow-[inset_0_0_0_2px_#ff6e40] text-neutral-600 hover:text-white hover:shadow-[inset_0_0_0_2px_#ff6e40] hover:bg-[#ff6e40] transition-all duration-300 drop-shadow-lg ${isAccordionOpen ? 'rounded-t-md' : 'rounded-md'}`}
         onClick={handleToggle}
       >
         {name}
@@ -43,7 +44,7 @@ const QA: React.FC<QAProps> = ({
       </button>
       {isAccordionOpen && (
         <motion.div
-          className=' bg-gray-700 text-[#d8d8d8] p-2 text-lg transition-all duration-300'
+          className='bg-gray-700 text-[#d8d8d8] p-2 text-lg transition-all duration-300 drop-shadow-lg rounded-b-md'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
