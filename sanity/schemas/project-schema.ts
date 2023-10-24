@@ -1,4 +1,4 @@
-const project = {
+/* const project = {
     name: 'project',
 
     title: 'Projects',
@@ -48,4 +48,4 @@ const project = {
     ]
 }
 
-export default project;
+export default project; */

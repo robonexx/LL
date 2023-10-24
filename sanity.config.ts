@@ -44,7 +44,7 @@ export default config
 /* const studioID = process.env.SANITY_STUDIO_ID
 
 export const config = {
-    projectId: 'iys8bmlh',
+    projectId: '',
     dataset: "production",
     title: "ll",
     basePath: "/admin",

@@ -1,4 +1,4 @@
-import { PortableTextBlock } from "sanity";
+/* import { PortableTextBlock } from "sanity";
 
 export type Project = {
   _id: string;
@@ -8,4 +8,4 @@ export type Project = {
   image: string;
   url: string;
   content: PortableTextBlock[];
-}
+} */

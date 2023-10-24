@@ -1,4 +1,3 @@
-import project from './project-schema'
 import post from './post-schema'
 import pagest from './pagest-schema'
 import author from './author'
@@ -15,7 +14,6 @@ import featuredText from './objects/featuredText'
 import mediaModule from './objects/mediaModule'
 
 const schemas = [
-    project,
     pagest,
     post,
     author,

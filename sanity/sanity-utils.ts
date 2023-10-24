@@ -1,11 +1,11 @@
 import { createClient, groq } from "next-sanity";
-import { Project } from "@/sanity/types/Project";
+/* import { Project } from "@/sanity/types/Project"; */
 import { Page } from "@/sanity/types/Page";
 import { PostType } from "@/sanity/types/Post";
 
 import client from "@/client"
 
-
+/* 
 export async function getProjects(): Promise<Project[]> {
   return createClient(client).fetch(
     groq`*[_type == "project"]{
@@ -19,8 +19,8 @@ export async function getProjects(): Promise<Project[]> {
     }`
   )
 }
-
-export async function getProject(slug: string): Promise<Project> {
+ */
+/* export async function getProject(slug: string): Promise<Project> {
   return createClient(client).fetch(
     groq`*[_type == "project" && slug.current == $slug][0]{
       _id,
@@ -33,7 +33,7 @@ export async function getProject(slug: string): Promise<Project> {
     }`,
     { slug }
   )
-}
+} */
 
 export async function getPages(): Promise<Page[]> {
   return createClient(client).fetch(
@@ -61,7 +61,7 @@ export async function getPage(slug: string): Promise<Page> {
 
 export async function getPosts(): Promise<PostType[]> {
     return createClient(client).fetch(
-      groq`*[_type == "post"]{
+      groq`*[_type == "post"]| order(publishDate desc){
         _id,
         _createdAt,
         title,
@@ -70,7 +70,7 @@ export async function getPosts(): Promise<PostType[]> {
         "image": image.asset->url,
         "author": author->{name, picture},
         body
-      }`
+      }[0...5]`
     )
   }
   

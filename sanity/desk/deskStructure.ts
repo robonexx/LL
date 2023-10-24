@@ -23,12 +23,12 @@ export const deskStructure: StructureResolver = (S, context) =>
         .icon(Article)
         .child(S.documentTypeList('post').title('Posts')),
       S.divider(),
-      // Projects ------------------
+     /*  // Projects ------------------
       S.listItem()
         .title('Projects')
         .icon(Cardholder)
         .child(S.documentTypeList('project').title('Projects')),
-      S.divider(),
+      S.divider(), */
       // GLOBAL ------------------
       S.listItem()
         .title('Global')

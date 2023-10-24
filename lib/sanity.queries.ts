@@ -1,12 +1,12 @@
 import { createClient, groq } from "next-sanity";
-import { Project } from "@/sanity/types/Project";
+/* import { Project } from "@/sanity/types/Project"; */
 import { Page } from "@/sanity/types/Page";
 import { PostType } from "@/sanity/types/Post";
 
 import client from "@/client"
 
 
-export async function getProjects(): Promise<Project[]> {
+/* export async function getProjects(): Promise<Project[]> {
   return createClient(client).fetch(
     groq`*[_type == "project"]{
       _id,
@@ -33,7 +33,7 @@ export async function getProject(slug: string): Promise<Project> {
     }`,
     { slug }
   )
-}
+} */
 
 export async function getPages(): Promise<Page[]> {
   return createClient(client).fetch(
@@ -60,7 +60,7 @@ export async function getPage(slug: string): Promise<Page> {
 }
 
 // Get all posts
-export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
+export const postsQuery = groq`*[_type == "post" && defined(slug.current)][0..5] {
     _id,
     _createdAt,
     title,
