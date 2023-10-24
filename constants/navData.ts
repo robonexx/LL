@@ -1,7 +1,4 @@
 import { SideNavItem } from '@/types/types';
-import { ReactNode } from 'react';
-import { AiOutlineHome } from 'react-icons/ai'
-import { Icon } from '@iconify/react'; 
 
 export const SIDENAV_ITEMS: SideNavItem[] = [
     {

@@ -1,13 +1,17 @@
+'use client';
 import '../globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import Header from './_components/Header';
 import HeaderMobile from './_components/Header-mobile';
 import Banner from '@/components/banner/Banner';
+import PageLayoutWrapper from './_components/PageLayoutWrapper';
+import PageWrapper from './_components/PageWrapper';
+import Sidebar from './_components/Sidebar';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700'],
-  subsets: ['latin']
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -23,10 +27,18 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${roboto.className}`}>
-        <Header />
-        <HeaderMobile />
-        <Banner />
-        {children}
+        <Sidebar />
+        <div className='flex'>
+          
+          <main className='flex-1'>
+            <PageLayoutWrapper>
+              <Header />
+              <HeaderMobile />
+              <Banner />
+              <PageWrapper>{children}</PageWrapper>
+            </PageLayoutWrapper>
+          </main>
+        </div>
       </body>
     </html>
   );

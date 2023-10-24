@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/buttons/Button';
-import heroImg from '@/public/hero.png';
+import heroImg from '@/public/derbyhero.png';
 
 // styles
 
@@ -19,18 +19,27 @@ const Hero = () => {
           the segregation of people
         </p>
         <div className='flex flex-col gap-4 pt-12 sm:flex-row sm:gap-6'>
-          <Button variant={'outline'}>
-            <Link href='/inclusion'>Read more</Link>
+          <Button variant='outline'>
+            <Link href='/history'>Read more</Link>
           </Button>
-          <Button variant={'outline'}>
-            <Link href='/#how-it-works'>Join the community</Link>
+          <Button variant='outline'>
+            <Link
+              href={{
+                pathname: 'https://www.facebook.com/groups/158481954185947',
+              }}
+              passHref
+              target='_blank'
+            >
+              Join the community
+            </Link>
           </Button>
         </div>
       </div>
       <Image
-        className='hidden max-w-xl object-contain lg:block drop-shadow-2xl'
+        className='hidden max-w-xl object-contain lg:block drop-shadow-2xl rotate-45'
         src={heroImg}
         alt='Mavericks flats'
+        priority
       />
     </div>
   );

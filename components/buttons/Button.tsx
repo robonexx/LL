@@ -3,7 +3,7 @@ import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@/utils/classnames';
 
 export const buttonVariants = cva(
-  'px-8 py-3 rounded-xl font-heading font-bold transition  text-center w-64 self-center',
+  'px-8 py-3 rounded-xl font-heading font-bold transition  text-center w-64',
   {
     variants: {
       variant: {

@@ -64,6 +64,9 @@ export default async function Home() {
               </div>
             </>
           ))} */}
+          <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
+          <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
+          <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
         </>
       </div>
     </main>

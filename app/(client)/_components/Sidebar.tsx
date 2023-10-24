@@ -1,13 +1,14 @@
 'use client';
+
 import React, { useState } from 'react';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { SIDENAV_ITEMS } from '@/constants/navData';
-import { Icon } from '@iconify/react';
 import { SideNavItem } from '@/types/types';
-
+import { Icon } from '@iconify/react';
+import Logo from '@/components/logo/Logo';
 
 const Sidebar = () => {
   return (
@@ -17,8 +18,8 @@ const Sidebar = () => {
           href='/'
           className='flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-200 h-12 w-full'
         >
-          <span className='h-7 w-7 bg-zinc-300 rounded-lg' />
-          <span className='font-bold text-xl hidden md:flex'>Logo</span>
+          <Logo />
+          <span className='font-bold text-xl hidden md:flex'>LockerLegends</span>
         </Link>
 
         <div className='flex flex-col space-y-2  md:px-6 '>
@@ -51,7 +52,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
             }`}
           >
             <div className='flex flex-row space-x-4 items-center'>
-            {item.icon && <Icon icon={item.icon} width="24" height="24" />}
+              <Icon icon={`lucide:${item.icon}`} width='24' height='24' />
               <span className='font-semibold text-xl  flex'>{item.title}</span>
             </div>
 
@@ -85,7 +86,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
             item.path === pathname ? 'bg-zinc-100' : ''
           }`}
         >
-          {item.icon}
+          <Icon icon={`lucide:${item.icon}`} width='24' height='24' />
           <span className='font-semibold text-xl flex'>{item.title}</span>
         </Link>
       )}

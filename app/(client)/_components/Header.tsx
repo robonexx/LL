@@ -6,6 +6,8 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 
 import useScroll from '@/hooks/useScroll';
 import { cn } from '@/utils/classnames';
+import Logo from '@/components/logo/Logo';
+import Button from '@/components/buttons/Button';
 
 const Header = () => {
   const scrolled = useScroll(50);
@@ -14,7 +16,7 @@ const Header = () => {
   return (
     <div
       className={cn(
-        `sticky inset-x-0 top-0 z-30 w-full transition-all border-b border-gray-200`,
+        `sticky inset-x-0  px-4 top-0 z-30 w-full transition-all border-b border-gray-200`,
         {
           'border-b border-gray-200 bg-white/75 backdrop-blur-lg': scrolled,
           'border-b border-gray-200 bg-white': selectedLayout,
@@ -27,15 +29,15 @@ const Header = () => {
             href="/"
             className="flex flex-row space-x-3 items-center justify-center md:hidden"
           >
-            <span className="h-7 w-7 bg-zinc-300 rounded-lg" />
+            <Logo />
             <span className="font-bold text-xl flex ">LockerLegends</span>
           </Link>
         </div>
 
         <div className="hidden md:block">
-          <div className="h-8 w-8 rounded-full bg-zinc-300 flex items-center justify-center text-center">
-            <span className="font-semibold text-sm">Contact</span>
-          </div>
+          <Button variant='primary' className='bg-[#ff6e40] hover:bg-orange-600 transition-colors duration-300'>
+            <Link href='/contact'>Contact</Link>
+          </Button>
         </div>
       </div>
     </div>
