@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/components/logo/Logo';
@@ -9,8 +10,8 @@ const Header = () => {
         <Link href='/'>
           <Logo>LockerLegends</Logo>
         </Link>
-      </div>
-      <div className='text-mono font-bold border rounded-full p-1 hover:bg-black cursor-pointer transition-all  duration-600 ease-in-out'>
+        </div>
+      <div className='text-mono font-bold border rounded-full p-2 bg-white hover:bg-black cursor-pointer transition-all  duration-600 ease-in-out'>
         <Link href='/admin'>Studio</Link>
       </div>
     </header>

@@ -1,10 +1,14 @@
 import '../globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Header from '@/components/header/Header';
+import { Roboto } from 'next/font/google';
+import Header from './_components/Header';
+import HeaderMobile from './_components/Header-mobile';
 import Banner from '@/components/banner/Banner';
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({
+  weight: ['100', '300', '400', '500', '700'],
+  subsets: ['latin']
+});
 
 export const metadata: Metadata = {
   title: 'LockerLegends 2024',
@@ -18,8 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className}`}>
+      <body className={`${roboto.className}`}>
         <Header />
+        <HeaderMobile />
         <Banner />
         {children}
       </body>

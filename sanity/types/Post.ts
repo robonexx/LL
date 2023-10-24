@@ -1,5 +1,4 @@
 import type { PortableTextBlock } from "@portabletext/types";
-
 import { Author } from "./Author";
 
 export type PostType = {

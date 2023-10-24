@@ -8,6 +8,7 @@ import { postsQuery } from '@/lib/sanity.queries';
 // preview
 import PreviewPosts from '@/components/previewposts/PreviewPosts';
 import PreviewProvider from '@/components/previewprovider/PreviewProvider';
+import Hero from './_components/Hero';
 
 const audiowide = Audiowide({ subsets: ['latin-ext'], weight: '400' });
 
@@ -32,10 +33,11 @@ export default async function Home() {
   }
 
   return (
-    <main className='w-full min-h-full flex flex-col bg-gray-800'>
+    <main className='w-full min-h-full flex flex-col'>
       <div>
         <>
-          <Posts posts={posts} />
+          <Hero />
+          {/*  <Posts posts={posts} /> */}
           {/*  {posts.map(({ slug, _id, image, title, author }) => (
             <>
               <div className='flex flex-col max-h-30 justify-center items-center'>
