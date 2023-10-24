@@ -49,7 +49,7 @@ const QA: React.FC<QAProps> = ({
           className='bg-gray-700 text-[#d8d8d8] py-2 px-8 text-lg transition-all duration-300 drop-shadow-lg rounded-b-md'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           <p>{desc}</p>
           {creator && (
