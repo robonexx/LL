@@ -1,9 +1,5 @@
-interface DanceStep {
-    name: string;
-    desc: string;
-    creator?: string;
-    id: string;
-  }
+import { DanceStep } from "@/types/types";
+
   
   export const stepsData: DanceStep[] = [
     {
