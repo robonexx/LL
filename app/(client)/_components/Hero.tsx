@@ -18,7 +18,7 @@ const Hero = () => {
           has a deep roots within an era, which ment so much to the unity and
           the segregation of people
         </p>
-        <div className='flex flex-col items-center justify-center md:justify-evenly gap-4 pt-12 md:flex-row md:gap-6'>
+        <div className='flex flex-col items-center justify-center md:justify-start gap-4 pt-12 md:flex-row md:gap-6'>
           <Button variant='secondary'>
             <Link href='/history'>Read more</Link>
           </Button>
