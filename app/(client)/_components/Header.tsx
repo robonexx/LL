@@ -1,9 +1,7 @@
 'use client';
 import React from 'react';
-
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
-
 import useScroll from '@/hooks/useScroll';
 import { cn } from '@/utils/classnames';
 import Logo from '@/components/logo/Logo';
