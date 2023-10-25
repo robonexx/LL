@@ -19,9 +19,9 @@ const SearchQa: React.FC<SearchInputProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className='px-8 py-3 rounded-xl font-heading font-bold w-64 self-center flex items-center justify-center'>
+    <div className='w-full rounded-xl font-heading font-bold flex items-center justify-center'>
       <input
-        className='h-full px-8 py-3 rounded-md shadow-[inset_0_0_0_2px_#005A9C]'
+        className='w-full h-full px-8 py-3 rounded-md shadow-[inset_0_0_0_2px_#005A9C]'
         type='text'
         value={query}
         onChange={handleInputChange}

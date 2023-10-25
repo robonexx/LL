@@ -19,10 +19,10 @@ const Curriculum = () => {
     stepsData.filter((item) => item.name.toLowerCase().includes(searchQuery));
 
   return (
-    <div className='px-32 pt-32 flex flex-col items-center'>
-      <Headline title='The steps and moves of locking!'/>
-      <SearchQa onSearch={handleSearch} />
-      <section className='w-full lg:w-1/2 self-center p-4 transition-all duration-300'>
+    <div className='px-8 pt-32  lg:px-32 flex flex-col items-center'>
+      <Headline title='The steps and moves of locking!' />
+      <section className='w-full lg:max-w-4xl self-center p-4 transition-all duration-300'>
+        <SearchQa onSearch={handleSearch} />
         {filteredStepsData ? (
           filteredStepsData.map(({ id, name, desc, creator }, index) => (
             <div key={id}>
@@ -40,7 +40,7 @@ const Curriculum = () => {
           <div className='px-32 pt-0 flex flex-col items-center'></div>
         )}
       </section>
-      <section className='w-full lg:w-1/2 self-center p-4'>
+      <section className='w-full lg:max-w-4xl self-center p-4'>
         {stepsData.map(({ id, name, desc, creator }, index) => (
           <div key={id}>
             <QA

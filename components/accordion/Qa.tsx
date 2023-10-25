@@ -27,13 +27,13 @@ const QA: React.FC<QAProps> = ({
 
   return (
     <motion.div
-      className='w-full h-full p-4 my-8'
+      className='w-full h-full py-4 my-8'
       initial={{ opacity: 0, height: 0 }}
       animate={{ opacity: 1, height: isAccordionOpen ? 'auto' : 0 }}
       transition={{ duration: 0.3 }}
     >
       <button
-        className={`w-full flex items-center justify-between px-8 py-3 border-none  text-lg cursor-pointer
+        className={`w-full flex items-center justify-between px-8 py-3 border-none text-lg cursor-pointer
         shadow-[inset_0_0_0_2px_#ff6e40] text-neutral-600 hover:text-white hover:shadow-[inset_0_0_0_2px_#ff6e40] hover:bg-[#ff6e40] transition-all duration-300 drop-shadow-lg ${
           isAccordionOpen ? 'rounded-t-md' : 'rounded-md'
         }`}

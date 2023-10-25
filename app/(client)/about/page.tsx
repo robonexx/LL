@@ -10,7 +10,7 @@ const aboutText = {
 
 const about = () => {
   return (
-    <div className='text-black px-64 pt-32 pb-64'>
+    <div className='text-black px-8 md:px-16 lg:px-32 pt-32 pb-64 w-full lg:max-w-5xl'>
       <HeroBasic
         headline={`${aboutText.headline}`}
         subheadline={`${aboutText.subheadline}`}
