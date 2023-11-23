@@ -10,7 +10,7 @@ export default function Posts({ posts = [] }: { posts: PostType[] }) {
         Read latest
       </h2>
       <h3 className='text-2xl p-4 font-bold'>{heading}</h3>
-      <section className='w-full h-full grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 px-16 lg:px-8'>
+      <section className='w-full h-full grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 px-4 lg:px-8'>
         {posts.map((posts) => (
           <PostCard {...posts} key={posts._id} />
         ))}

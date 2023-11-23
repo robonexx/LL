@@ -6,16 +6,15 @@ import { PostType } from '@/sanity/types/Post';
 import { RichTextComponents } from '@/sanity/RichTextComponent';
 
 export default function Post({ post }: { post: PostType }) {
-
-  console.log(post)
+  console.log(post);
   return (
     <article className='relative h-full w-full md:w-2/3 border-gray-500 rounded-xs p-10 transition shadow-lg'>
       <header className='text-center'>
-        <h1 className='bg-gradient-to-r text-[#4b4b4b] bg-clip-text text-transparent text-5xl drop-shadow font-extrabold pb-16'>
+        <h1 className='font-outline-2 hover:font-outline-4 text-3xl md:text-5xl drop-shadow text-transparent font-extrabold pb-16'>
           {post?.title}
         </h1>
       </header>
-      <div className='w-2/3 h-[480px] relative mx-auto'>
+      <div className='w-full lg:w-2/3 h-[280px] md:h-[360px] relative mx-auto'>
         <Image
           className='w-full h-full rounded-lg object-cover object-center'
           src={post.image}
