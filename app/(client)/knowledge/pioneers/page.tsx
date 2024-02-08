@@ -1,6 +1,5 @@
 import React from 'react'
-import HallOfFame from './_components/hallOfFame'
-import HofSidebar from './_components/HofSidebar'
+import HallOfFame from './_components/HallOfFame'
 import Headline from '@/components/headline/Headline'
 
 const page = () => {

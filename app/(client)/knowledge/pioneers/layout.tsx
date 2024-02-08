@@ -20,7 +20,7 @@ export default function HOFLayout({
   return (
       <section className={`${roboto.className}`}>
         <div className='flex max-w-screen'>
-          <HofSidebar />
+         {/*  <HofSidebar /> */}
           <main>
               {children}
           </main>

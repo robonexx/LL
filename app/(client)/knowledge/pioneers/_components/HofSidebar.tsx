@@ -7,12 +7,12 @@ import { Icon } from '@iconify/react';
 
 const HofSidebar = () => {
   return (
-    <div className='fixed left-0 top-0 w-64 h-full border-r bg-[#f8f8f8] border-white pt-20 z-10'>
+    <div className='fixed left-0 top-0 w-64 h-full border-r bg-[#f8f8f8] border-white pt-20 z-10 hidden md:grid'>
       <Link
         href='/'
-        className='absolute top-2 left-12 drop-shadow-md cursor-pointer bg-[#ff6e40] rounded-full py-3 px-3 grid place-content-center hover:bg-orange-600'
+        className='absolute top-2 left-4 drop-shadow-md cursor-pointer bg-[#ff6e40] rounded-full py-3 px-3 grid place-content-center hover:bg-orange-600'
       >
-        <Icon icon='lucide:home' color="#737fee" width='32' height='32' className='mb-[2px] ml-[2px]' />
+        <Icon icon='lucide:home' color="#1d1d1e" width='32' height='32' className='mb-[2px] ml-[2px]' />
       </Link>
       <ul className='h-full p-0 overflow-y-scroll pb-24'>
         {lockersData.map(({ id, name, href }, i) => (
@@ -25,7 +25,7 @@ const HofSidebar = () => {
           >
             <a
               href={href}
-              className='block px-6 py-3 text-client-1 no-underline cursor-pointer font-thin text-base'
+              className='block px-6 py-3 text-client-1 no-underline cursor-pointer font-semibold text-base'
             >
               {name}
             </a>
