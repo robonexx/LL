@@ -33,9 +33,9 @@ const QA: React.FC<QAProps> = ({
       transition={{ duration: 0.3 }}
     >
       <button
-        className={`w-full flex items-center justify-between px-8 py-3 border-none text-lg cursor-pointer
+        className={`w-full flex items-center justify-between px-8 border-none text-lg cursor-pointer
         shadow-[inset_0_0_0_2px_#ff6e40] text-neutral-600 hover:text-white hover:shadow-[inset_0_0_0_2px_#ff6e40] hover:bg-[#ff6e40] transition-all duration-300 drop-shadow-lg ${
-          isAccordionOpen ? 'rounded-t-md' : 'rounded-md'
+          isAccordionOpen ? 'rounded-t-md py-3' : 'rounded-md py-8'
         }`}
         onClick={handleToggle}
       >

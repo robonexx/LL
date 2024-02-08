@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import QA from '@/components/accordion/Qa';
 import { stepsData } from '@/constants/stepsData';
 import SearchQa from '@/components/accordion/searchQa';
@@ -8,9 +8,26 @@ import Headline from '@/components/headline/Headline';
 const Curriculum = () => {
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const accordionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        accordionRef.current &&
+        !accordionRef.current.contains(event.target as Node)
+      ) {
+        setActiveIndex(-1);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleSearch = (query: string) => {
-    console.log('Search query:', query);
     setSearchQuery(query);
   };
 
@@ -21,29 +38,15 @@ const Curriculum = () => {
   return (
     <div className='px-8 pt-32  lg:px-32 flex flex-col items-center'>
       <Headline title='The steps and moves of locking!' />
-      <section className='w-full lg:max-w-4xl self-center p-4 transition-all duration-300'>
-        <SearchQa onSearch={handleSearch} />
+      <SearchQa onSearch={handleSearch} />
+      <section
+        ref={accordionRef}
+        className='w-full lg:max-w-4xl self-center p-4 transition-all duration-300 grid grid-cols-1 gap-8 md:grid-cols-2'
+      >
         {filteredStepsData ? (
           filteredStepsData.map(({ id, name, desc, creator }, index) => (
-            <div key={id}>
-              <QA
-                name={name}
-                desc={desc}
-                creator={creator}
-                index={index}
-                activeIndex={activeIndex}
-                setActiveIndex={setActiveIndex}
-              />
-            </div>
-          ))
-        ) : (
-          <div className='px-32 pt-0 flex flex-col items-center'></div>
-        )}
-      </section>
-      <section className='w-full lg:max-w-4xl self-center p-4'>
-        {stepsData.map(({ id, name, desc, creator }, index) => (
-          <div key={id}>
             <QA
+              key={id}
               name={name}
               desc={desc}
               creator={creator}
@@ -51,7 +54,22 @@ const Curriculum = () => {
               activeIndex={activeIndex}
               setActiveIndex={setActiveIndex}
             />
-          </div>
+          ))
+        ) : (
+          <div className='px-32 pt-0 flex flex-col items-center'></div>
+        )}
+      </section>
+      <section className='w-full lg:max-w-4xl self-center p-4  grid grid-cols-1 gap-8 md:grid-cols-2'>
+        {stepsData.map(({ id, name, desc, creator }, index) => (
+          <QA
+            key={id}
+            name={name}
+            desc={desc}
+            creator={creator}
+            index={index}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          />
         ))}
       </section>
     </div>

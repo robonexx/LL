@@ -9,6 +9,7 @@ import { postsQuery } from '@/lib/sanity.queries';
 import PreviewPosts from '@/components/previewposts/PreviewPosts';
 import PreviewProvider from '@/components/previewprovider/PreviewProvider';
 import Hero from './_components/Hero';
+import Banner from '@/components/banner/Banner';
 
 const audiowide = Audiowide({ subsets: ['latin-ext'], weight: '400' });
 
@@ -33,11 +34,12 @@ export default async function Home() {
   }
 
   return (
-      <div className='w-full min-h-full flex flex-col relative'>
-        <>
-          <Hero />
-          <Posts posts={posts} />
-          {/*  {posts.map(({ slug, _id, image, title, author }) => (
+    <div className='w-full min-h-full flex flex-col relative'>
+      <>
+        <Banner />
+        <Hero />
+        <Posts posts={posts} />
+        {/*  {posts.map(({ slug, _id, image, title, author }) => (
             <>
               <div className='flex flex-col max-h-30 justify-center items-center'>
                 <Link
@@ -63,10 +65,10 @@ export default async function Home() {
               </div>
             </>
           ))} */}
-          <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
-          <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
-          <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
-        </>
-      </div>
+        <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
+        <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
+        <section className='h-screen bg-gray-300 py-4 border-red-300'></section>
+      </>
+    </div>
   );
 }

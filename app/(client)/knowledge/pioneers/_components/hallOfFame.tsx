@@ -21,7 +21,7 @@ const HallOfFame = () => {
             <h2 className='text-body text-shadow text-lg md:text-2xl'>
               {name}
             </h2>
-            <div className='relative w-[380px] h-[300px] md:w-[280px] md:h-[280px] rounded-xl'>
+            <div className='relative w-full h-[380px] md:w-[280px] md:h-[280px] rounded-xl shadow-md'>
               <Image
                 src={img}
                 priority

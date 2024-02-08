@@ -7,7 +7,7 @@ const Accordion = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className='w-full'>
+    <div className='max-w-md'>
       <input
         id='expandCollapse'
         checked={open}
@@ -17,13 +17,13 @@ const Accordion = () => {
       <label
         htmlFor='expandCollapse'
         className={classNames(
-          'w-full flex justify-center items-center bg-blue-100',
+          'w-full flex items-center justify-between bg-blue-100',
           'hover:bg-blue-500',
           'transition-colors duration-1000 ease-in-out'
         )}
         onClick={() => setOpen(!open)}
       >
-        {open ? 'Less information' : 'More information'}
+      Title  {/* {open ? 'Less information' : 'More information'} */}
         <Icon
           icon='lucide:chevron-down'
           height='24'

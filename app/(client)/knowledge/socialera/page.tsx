@@ -1,8 +1,12 @@
+import Accordion from '@/components/accordion/Accordion'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>socialera</div>
+    <div>
+      <h2>Social era</h2>
+      <Accordion></Accordion>
+    </div>
   )
 }
 

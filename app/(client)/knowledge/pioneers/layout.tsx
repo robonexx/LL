@@ -18,13 +18,13 @@ export default function HOFLayout({
   children: React.ReactNode;
 }) {
   return (
-      <section className={`${roboto.className}`}>
+      <main className={`${roboto.className}`}>
         <div className='flex max-w-screen'>
-         {/*  <HofSidebar /> */}
-          <main>
+          <HofSidebar />
+          
               {children}
-          </main>
+        
         </div>
-      </section>
+      </main>
   );
 }

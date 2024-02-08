@@ -31,7 +31,7 @@ export default function RootLayout({
             <PageLayoutWrapper>
               {<Header />}
               {<HeaderMobile />}
-              <Banner />
+             
             {children}
             </PageLayoutWrapper>
           </main>
