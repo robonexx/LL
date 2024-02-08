@@ -42,11 +42,11 @@ const Curriculum = () => {
   };
 
   return (
-    <div className='px-8 pt-32  lg:px-32 flex flex-col items-center max-w-5xl'>
+    <div className='px-8 pt-32  lg:px-32 flex flex-col items-center max-w-5xl mx-auto'>
       <Headline title='The steps and moves of locking!' />
       <SearchQa onSearch={handleSearch} />
       <section
-        className='w-full lg:max-w-4xl self-center p-4 transition-all duration-300 grid grid-cols-1 gap-8 md:grid-cols-2'
+        className='w-full lg:max-w-4xl self-center transition-all duration-300 grid grid-cols-1 gap-8 lg:grid-cols-2'
         ref={accordionRef}
       >
         {(filteredStepsData && filteredStepsData.length > 0 ? filteredStepsData : stepsData).map(({ id, name, desc, creator }, index) => (

@@ -17,8 +17,7 @@ const SearchQa: React.FC<SearchInputProps> = ({ onSearch }) => {
     if (event.key === 'Enter') {
       handleSearch();
     }
-  };
-  
+  }; 
   
 
   const handleSearch = () => {
@@ -27,7 +26,7 @@ const SearchQa: React.FC<SearchInputProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className='w-2/3 rounded-xl font-heading font-bold flex items-center self-center'>
+    <div className='w-full lg:w-2/3 rounded-xl font-heading font-bold flex items-center self-center'>
       <input
         className='w-full h-full px-8 py-3 rounded-md shadow-[inset_0_0_0_2px_#005A9C]'
         type='text'
