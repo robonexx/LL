@@ -1,6 +1,7 @@
 import Headline from '@/components/headline/Headline';
 import HeroBasic from '@/components/hero-sections/HeroBasic';
 import React from 'react';
+import FounderSection from './_components/founder/Founder';
 
 const aboutText = {
   headline: 'About Us',
@@ -10,21 +11,22 @@ const aboutText = {
 
 const about = () => {
   return (
-    <div className='text-black px-8 md:px-16 lg:px-32 pt-32 pb-64 w-full lg:max-w-5xl'>
+    <div className='text-black px-8 md:px-16 lg:px-32 pt-32 pb-20 w-full lg:max-w-5xl'>
       <HeroBasic
         headline={`${aboutText.headline}`}
         subheadline={`${aboutText.subheadline}`}
         text={`${aboutText.text}`}
       />
-      <article className='relative font-normal max-w-screen-sm lg:max-w-screen-lg'>
+      <FounderSection />
+      <article className='relative font-normal max-w-screen-sm lg:max-w-screen-lg py-20'>
         <h2 className='font-semibold text-2xl'>How it started...</h2>
-        <p className='py-4 text-base lg:text-lg'>
+        <p className='py-4 text-base lg:text-lg leading-loose'>
           Back in 2003 when we decided to create Lockerlegends, back when we saw
           a need in a then growing new locking community for education and the
           understanding of the importance of the historical history, concerning
           our wonderful world of Locking.
         </p>
-        <p className='py-4 text-base lg:text-lg'>
+        <p className='py-4 text-base lg:text-lg leading-loose'>
           <span className='font-semibold text-orange-700'>We</span> realized
           that many stories, and events in locking history were in accurate,
           because the true background and events surrounding its inception were
@@ -42,7 +44,7 @@ const about = () => {
           world. Just google locking history &amp; there is probably something
           taken directly from our website posted there.{' '}
           </p>
-          <p className='py-4 text-base lg:text-lg'>
+          <p className='py-4 text-base lg:text-lg leading-loose'>
           <span className='font-semibold text-orange-700'>We</span> were happy
           to be involved in the first Full week camps taught by original
           generation Lockers in 2005, We are happy to see Full Locking camps now
@@ -51,7 +53,7 @@ const about = () => {
           television show “SOUL TRAIN” train, and its social party dancing with
           the foundation of locking.{' '}
           </p>
-          <p className='py-4 text-base lg:text-lg'>
+          <p className='py-4 text-base lg:text-lg leading-loose'>
           <span className='font-semibold text-orange-700'>We </span> are proud yo
           have conducted The FIRST ever Social Party Dance className in 2005,
           TODAY we see Social Party Dance classNamees ( which are called Soul
@@ -61,7 +63,7 @@ const about = () => {
           Locking &amp; its connection to its streets, Now we see Locking
           accepted with the other street forms at events all over the world.
           </p>
-          <p className='py-4 text-base lg:text-lg'>
+          <p className='py-4 text-base lg:text-lg leading-loose'>
           <span className='font-semibold text-orange-700'>We </span> exposed many
           early Lost Lockers &amp; their stories &amp; contributions to the
           world ,including Charles Robot , His exposure was of the utmost
@@ -71,7 +73,7 @@ const about = () => {
           movement to connect the many styles of popping back to its original
           roots of Northern California to Locking and Roboting, of Southern
           </p>
-          <p className='py-4 text-base lg:text-lg'>
+          <p className='py-4 text-base lg:text-lg leading-loose'>
           California.<span className='font-semibold text-orange-700'>We </span>
           are happy to see that Locking &amp; street dance is again connected to
           the term MOVEMENT, where we were one of the first to teach of the
@@ -80,7 +82,7 @@ const about = () => {
           Watts Soul &amp; Locking4life who have taken our lead and with many
           conversations have again producing the purpose of unity to our dance…
           </p>
-          <p className='py-4 text-base lg:text-lg'>
+          <p className='py-4 text-base lg:text-lg leading-loose'>
           <span className='font-semibold text-orange-700'>We </span> have fought
           and continue to fight the attempt to DISTORT this education, and the
           movement to proclaim Locking a African American Dance art form as a
@@ -91,7 +93,7 @@ const about = () => {
           racial barriers , which go way beyond, its acceptance as marketable
         commercial entertainment
           </p>
-        <p className='py-4 text-base lg:text-lg'>
+        <p className='py-4 text-base lg:text-lg leading-loose'>
           <span className='font-semibold text-orange-700'>We </span> have seen
           the uniting of the Original Era with the 1980s era, and later decades
           , all the way into the international scene, we have worked to explain

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const Soultrain = () => {
   return (
     <div>soultrain</div>
   )
 }
 
-export default page
+export default Soultrain

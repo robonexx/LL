@@ -23,9 +23,9 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      type: 'array',
       name: 'sections',
       title: 'Sections',
+      type: 'array',
       of: [
         defineArrayMember({ type: 'MainHero' }),
         defineArrayMember({ type: 'Quote' }),

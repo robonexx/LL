@@ -1,9 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const Wattsstaxx = () => {
   return (
     <div>wattsstaxx</div>
   )
 }
 
-export default page
+export default Wattsstaxx

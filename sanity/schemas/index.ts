@@ -1,5 +1,6 @@
 import post from './post-schema'
 import pagest from './pagest-schema'
+import simplePage from './page-schema'
 import author from './author'
 import category from './category'
 import page from './documents/page'
@@ -16,6 +17,7 @@ import mediaModule from './objects/mediaModule'
 const schemas = [
     pagest,
     post,
+    simplePage,
     author,
     category,
     page,

@@ -1,11 +1,12 @@
 import { createClient, groq } from "next-sanity";
-import { Page } from "@/sanity/types/Page";
+import { PageType } from "@/sanity/types/Page";
 import { PostType } from "@/sanity/types/Post";
 
 import client from "@/client"
+import { constants } from "fs/promises";
 
 
-export async function getPages(): Promise<Page[]> {
+export async function getPages(): Promise<PageType[]> {
   return createClient(client).fetch(
     groq`*[_type == "page"]{
       _id,
@@ -16,12 +17,37 @@ export async function getPages(): Promise<Page[]> {
   )
 }
 
-export async function getPage(slug: string): Promise<Page> {
+export async function getPage(slug: string): Promise<PageType> {
   return createClient(client).fetch(
     groq`*[_type == "page" && slug.current == $slug][0]{
       _id,
       _createdAt,
       title,
+      "slug": slug.current,
+      content
+    }`,
+    { slug }
+  )
+}
+export async function getAllPages(): Promise<PageType[]> {
+  return createClient(client).fetch(
+    groq`*[_type == "simplePage"]{
+      _id,
+      _createdAt,
+      title,
+      "image": image.asset->url,
+      "slug": slug.current
+    }`
+  )
+}
+
+export async function getSinglePage(slug: string): Promise<PageType> {
+  return createClient(client).fetch(
+    groq`*[_type == "simplePage" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+      "image": image.asset->url,
       "slug": slug.current,
       content
     }`,

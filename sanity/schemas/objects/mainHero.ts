@@ -26,7 +26,7 @@ export default defineType({
     defineField({
       name: 'cta',
       title: 'Cta',
-      type: 'Cta',
+      type: 'string',
     }),
     defineField({
       type: 'image',

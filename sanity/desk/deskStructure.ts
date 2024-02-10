@@ -17,6 +17,12 @@ export const deskStructure: StructureResolver = (S, context) =>
         .icon(Browsers)
         .child(S.documentTypeList('page').title('Pages')),
       S.divider(),
+      // PAGES ------Simple------------
+      S.listItem()
+        .title('Pages-simple')
+        .icon(Browsers)
+        .child(S.documentTypeList('simplePage').title('Pages-simple')),
+      S.divider(),
       // Posts ------------------
       S.listItem()
         .title('Posts')

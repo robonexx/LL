@@ -7,7 +7,7 @@ interface HeadlineProps {
 
 const Headline: React.FC<HeadlineProps> = ({ title }) => {
   return (
-    <h1 className="text-black text-3xl md:text-5xl px-20 py-8 font-semibold">
+    <h1 className="text-black text-5xl lg:text-7xl py-8 font-semibold">
       {title}
     </h1>
   );

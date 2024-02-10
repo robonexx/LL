@@ -12,7 +12,7 @@ const SidebarPostCard = ({
 }: PostType) => {
   return (
     <Link
-      href={`/${slug}`}
+      href={`/post/${slug}`}
       key={_id}
       className='m-0 sm:m-4 border-none mb-10 sm:mb-0 relative w-full h-32 drop-shadow-xl md:group-hover:scale-105 transition-transform duration-300 ease-out cursor-pointer flex flex-col overflow-hidden rounded-xl shadow-lg'
     >

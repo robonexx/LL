@@ -7,6 +7,8 @@ import Banner from '@/components/banner/Banner';
 import PageLayoutWrapper from './_components/PageLayoutWrapper';
 import Sidebar from './_components/Sidebar';
 
+
+
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700'],
   subsets: ['latin'],
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   description: 'Official website of lockerlegends international',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -13,17 +13,19 @@ const PostCard = ({
 }: PostType) => {
   return (
     <Link
-      href={`/${slug}`}
+      href={`/post/${slug}`}
       key={_id}
-      className='m-0 sm:m-4 border-none mb-10 sm:mb-0 relative w-full h-64 drop-shadow-xl md:group-hover:scale-105 transition-transform duration-300 ease-out cursor-pointer flex flex-col overflow-hidden rounded-xl shadow-lg'
+      className='m-0 sm:m-4 border-none mb-10 sm:mb-0 relative w-full h-72 drop-shadow-xl md:group-hover:scale-105 transition-transform duration-300 ease-out cursor-pointer flex flex-col overflow-hidden rounded-xl shadow-lg'
     >
-      <div className='w-full h-full'>
+      <div className='relative aspect-[3/2]'>
         {image && (
           <Image
             src={image}
             alt={title}
             fill
+            priority
             className='object-cover scale-105 hover:scale-110 transition-all duration-300 brightness-75'
+            sizes='(max-width: 960px), 100%, auto'
           />
         )}
       </div>

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const Memorial = () => {
   return (
     <div>memorial</div>
   )
 }
 
-export default page
+export default Memorial

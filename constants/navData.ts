@@ -3,16 +3,16 @@ import { SideNavItem } from '@/types/types';
 export const SIDENAV_ITEMS: SideNavItem[] = [
     {
       title: 'Home',
-      path: '/',
+      path: '',
       icon: 'lucide:home' ,
     },
     {
       title: 'About',
-      path: '/about',
+      path: 'about',
     },
     {
       title: 'History',
-      path: '/history',
+      path: 'history',
       icon: 'lucide:folder-clock' ,
       submenu: true,
       subMenuItems: [
@@ -20,11 +20,12 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         { title: 'Memorial', path: '/history/memorial' },
         { title: 'Soul Train', path: '/history/soultrain' },
         { title: 'Watts stax', path: '/history/wattsstax' },
+        { title: 'Timeline', path: '/history/timeline' },
       ],
     },
     {
       title: 'Knowledge',
-      path: '/knowledge',
+      path: 'knowledge',
       icon: 'lucide:book' ,
       submenu: true,
       subMenuItems: [
@@ -35,7 +36,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     },
     {
       title: 'Contact',
-      path: '/Contact',
+      path: 'contact',
       icon: 'lucide:send' ,
     },
   ];
