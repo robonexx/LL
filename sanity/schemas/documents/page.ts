@@ -3,8 +3,8 @@ import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
-  name: 'page',
-  title: 'Page',
+  name: 'pages',
+  title: 'Pages',
   icon: Browser,
   fields: [
     defineField({

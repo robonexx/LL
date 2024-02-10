@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { PostType } from '@/sanity/types/Post';
 import { RichTextComponents } from '@/sanity/RichTextComponent';
+import { urlForImage } from '@/lib/sanity.image';
 
 export default function Post({ post }: { post: PostType }) {
   return (

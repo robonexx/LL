@@ -3,7 +3,6 @@ import { PageType } from "@/sanity/types/Page";
 import { PostType } from "@/sanity/types/Post";
 
 import client from "@/client"
-import { constants } from "fs/promises";
 
 
 export async function getPages(): Promise<PageType[]> {

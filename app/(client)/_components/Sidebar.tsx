@@ -1,8 +1,6 @@
-
-
 import Link from 'next/link';
 import { SIDENAV_ITEMS } from '@/constants/navData';
-import { getAllPages } from '@/sanity/sanity-utils';
+import { getPages } from '@/sanity/sanity-utils';
 
 import Logo from '@/components/logo/Logo';
 import SidebarPosts from './SidebarPosts';
@@ -16,9 +14,9 @@ export const fetchCache = 'force-no-store';
 export const dynamic = 'force-dynamic'; */
 
 const Sidebar = async () => {
- /*  const [posts, setPosts] = useState<PostType[] | null>(null); */
+  /*  const [posts, setPosts] = useState<PostType[] | null>(null); */
 
- /*  useEffect(() => {
+  /*  useEffect(() => {
     const fetchPosts = async () => {
       try {
         const fetchedPosts = await getPosts();
@@ -32,21 +30,21 @@ const Sidebar = async () => {
   }, []); */
 
   let fetchedPosts = await getPosts();
-const posts = await fetchedPosts.slice(0, 3);
+  const posts = await fetchedPosts.slice(0, 3);
 
-  const pages = await getAllPages()
+  const pages = await getPages();
 
   // Object transformation
   // Chnaging the properties so slug becomes path
   const LINKS = pages.map((p) => ({
     title: capitalizeFirstLetter(p.title),
-    path: `${p.slug}`
-  }))
+    path: `${p.slug}`,
+  }));
 
   // Combining the links from contants and sanity
   const combinedLinks = [...LINKS, ...SIDENAV_ITEMS];
 
- /*  console.log(combinedLinks) */
+  /*  console.log(combinedLinks) */
 
   return (
     <div className='md:w-60 bg-[#ededed] h-screen flex-1 fixed border-r border-zinc-100 hidden md:flex'>

@@ -6,7 +6,7 @@ import client from "@/client"
 
 export async function getPages(): Promise<PageType[]> {
   return createClient(client).fetch(
-    groq`*[_type == "pagest"]{
+    groq`*[_type == "page"]{
       _id,
       _createdAt,
       title,
@@ -21,8 +21,12 @@ export async function getPage(slug: string): Promise<PageType> {
       _id,
       _createdAt,
       title,
+      "image": image.asset->url,
       "slug": slug.current,
-      content
+      content[]{
+        ...,
+       
+      }
     }`,
     { slug }
   )

@@ -1,34 +1,35 @@
-import { getPost } from '@/sanity/sanity-utils';
+import { SanityDocument } from '@sanity/client';
+import { getPost, postPathsQuery } from '@/sanity/lib/quaries';
 import { draftMode } from 'next/headers';
 import Post from '@/components/posts/Post';
 import { PostType } from '@/sanity/types/Post';
 import PreviewProvider from '@/components/previewprovider/PreviewProvider';
 import PreviewPost from '@/components/previewpost/PreviewPost';
-import { cachedClient } from '@/lib/sanity.client';
-import { postPathsQuery, postQuery } from '@/lib/sanity.queries';
+import { client } from '@/sanity/lib/client';
 import { getCachedClient } from '@/lib/getClient';
+import { sanityFetch } from '@/sanity/lib/fetch';
+import AltPost from '@/components/posts/AltPost';
 
 type Props = {
   params: { slug: string };
 };
 
-export const revalidate = 20;
-export const fetchCache = 'force-no-store';
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const posts = await client.fetch(postPathsQuery);
+  return posts;
+}
 
 export default async function postPage({ params }: Props) {
-  const slug = params.slug;
-  const post = await getPost(slug);
+  const post = await sanityFetch<PostType>({ query: getPost, params });
 
-  console.log('post from post ', post)
+  console.log('post from post ', post);
 
   const preview = draftMode().isEnabled
     ? { token: process.env.SANITY_API_READ_TOKEN }
     : undefined;
-  const postpreview = await getCachedClient(preview)<PostType>(
-    postQuery,
-    params
-  );
+  const postpreview = await getCachedClient(preview)<PostType>(getPost, params);
 
   if (preview?.token) {
     return (
@@ -40,8 +41,10 @@ export default async function postPage({ params }: Props) {
 
   return (
     <section className='flex items-center justify-center w-full h-full'>
-      <Post post={post} />
+      <AltPost post={post} />
     </section>
+
+    /*  <Post post={post} /> */
     /*  <div className='p-20 container mx-auto prose prose-lg'>
       <header className='text-center'>
         <h1 className='bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold'>

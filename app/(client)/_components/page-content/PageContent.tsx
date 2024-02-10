@@ -5,8 +5,7 @@ import { RichTextComponents } from '@/sanity/RichTextComponent';
 import { PageType } from '@/sanity/types/Page';
 
 export default function PageContent({ page }: { page: PageType }) {
-
-  console.log(page)
+  console.log('from page content: ', page?.content);
   return (
     <main className='relative h-full w-full border-gray-500 rounded-xs p-10 md:p-20 transition shadow-lg'>
       <header className='text-center'>

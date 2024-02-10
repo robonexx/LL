@@ -1,15 +1,16 @@
-import Image from 'next/image';
-import { ReactNode } from 'react';
+import Image from 'next/image'
 
 export const RichTextComponents = {
   types: {
-    image: ({ value }: any) => (
-      <Image
-        src={value.imageUrl}
-        alt='blog picture'
-        fill
-        className='object-cover'
-      />
+    image: ({imageUrl}: any) => (
+      <div className='relative w-full h-96 m-10 mx-auto'>
+        <Image
+          src={imageUrl}
+          alt='blog picture'
+          fill
+          className='object-cover'
+        />
+      </div>
     ),
   },
   block: {
