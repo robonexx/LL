@@ -7,6 +7,7 @@ export type PostType = {
     title: string;
     slug: string;
     image: string;
+    alt: string;
     url?: string;
     categories?: [];
     author: Author;

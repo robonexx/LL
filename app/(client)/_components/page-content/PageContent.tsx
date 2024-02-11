@@ -6,6 +6,7 @@ import { PageType } from '@/sanity/types/Page';
 
 export default function PageContent({ page }: { page: PageType }) {
   console.log('from page content: ', page?.content);
+
   return (
     <main className='relative h-full w-full border-gray-500 rounded-xs p-10 md:p-20 transition shadow-lg'>
       <header className='text-center'>
@@ -27,7 +28,7 @@ export default function PageContent({ page }: { page: PageType }) {
       ) : (
         <div></div>
       )}
-      <div className='relative text-lg text-gray-700 mt-5 text-justify lg:px-40'>
+      <div className='relative mt-5 text-justify lg:px-40'>
         <PortableText value={page?.content} components={RichTextComponents} />
       </div>
     </main>

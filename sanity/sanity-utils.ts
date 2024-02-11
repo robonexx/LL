@@ -25,7 +25,7 @@ export async function getPage(slug: string): Promise<PageType> {
       "slug": slug.current,
       content[]{
         ...,
-       
+        "image": image.asset->url,
       }
     }`,
     { slug }

@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export default async function postPage({ params }: Props) {
   const post = await sanityFetch<PostType>({ query: getPost, params });
 
-  console.log('post from post ', post);
+ /*  console.log('post from post ', post); */
 
   const preview = draftMode().isEnabled
     ? { token: process.env.SANITY_API_READ_TOKEN }
@@ -41,7 +41,7 @@ export default async function postPage({ params }: Props) {
 
   return (
     <section className='flex items-center justify-center w-full h-full'>
-      <AltPost post={post} />
+     <Post post={post} />
     </section>
 
     /*  <Post post={post} /> */

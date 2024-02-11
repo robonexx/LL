@@ -1,11 +1,16 @@
 'use client';
+import imageUrlBuilder from '@sanity/image-url';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { PostType } from '@/sanity/types/Post';
 import { RichTextComponents } from '@/sanity/RichTextComponent';
-import { urlForImage } from '@/lib/sanity.image';
+import { client } from '@/sanity/lib/client';
+import { urlFor } from '@/sanity/lib/image';
+
+const builder = imageUrlBuilder(client);
 
 export default function Post({ post }: { post: PostType }) {
+  console.log(post.image);
   return (
     <article className='relative h-full w-full border-gray-500 rounded-xs p-10 md:p-20 transition shadow-lg'>
       <header className='text-center'>
@@ -16,7 +21,8 @@ export default function Post({ post }: { post: PostType }) {
       <div className='w-full lg:w-full h-[380px] md:h-[460px] relative mx-auto rounded-xl shadow-lg mb-16'>
         <Image
           className='w-full h-full object-cover object-center rounded-xl shadow-lg'
-          src={post.image}
+          /*   src={builder.image(post.image).auto('format').fit('max').url()} */
+          src={urlFor(post.image).url()}
           alt={post.title}
           fill
           priority

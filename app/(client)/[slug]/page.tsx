@@ -23,8 +23,6 @@ export async function generateStaticParams() {
 export default async function postPage({ params }: Props) {
   const page = await sanityFetch<PageType>({ query: getPage, params });
 
-  console.log('post from post ', page);
-
   /* const preview = draftMode().isEnabled
     ? { token: process.env.SANITY_API_READ_TOKEN }
     : undefined;

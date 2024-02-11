@@ -13,8 +13,33 @@ export const getPage = groq`*[_type == "page" && slug.current == $slug][0]{
       title,
       "image": image.asset->url,
       "slug": slug.current,
-      content[]{
-        ...,       
+      content[] {
+        ...,
+        _type == "image" => {
+          ...,
+          asset->
+        }
+      }
+    }`
+export const getKnowledgePages = groq`*[_type == "knowledge"]{
+      _id,
+      _createdAt,
+      title,
+      "slug": slug.current
+    }`
+
+export const getKnowledgePage = groq`*[_type == "knowledge" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      title,
+      "image": image.asset->url,
+      "slug": slug.current,
+      content[] {
+        ...,
+        _type == "image" => {
+          ...,
+          asset->
+        }
       }
     }`
 

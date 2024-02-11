@@ -26,14 +26,6 @@ export default defineType({
       name: 'sections',
       title: 'Sections',
       type: 'array',
-      of: [
-        defineArrayMember({ type: 'MainHero' }),
-        defineArrayMember({ type: 'Quote' }),
-        defineArrayMember({ type: 'FeaturedItems' }),
-        defineArrayMember({ type: 'MediaModule' }),
-        defineArrayMember({ type: 'CtaBanner' }),
-        defineArrayMember({ type: 'FeaturedText' }),
-      ],
     }),
   ],
   preview: {
@@ -48,3 +40,20 @@ export default defineType({
     },
   },
 })
+
+/* 
+
+ defineField({
+      name: 'sections',
+      title: 'Sections',
+      type: 'array',
+      of: [
+        defineArrayMember({ type: 'MainHero' }),
+        defineArrayMember({ type: 'Quote' }),
+        defineArrayMember({ type: 'FeaturedItems' }),
+        defineArrayMember({ type: 'MediaModule' }),
+        defineArrayMember({ type: 'CtaBanner' }),
+        defineArrayMember({ type: 'FeaturedText' }),
+      ],
+    }),
+*/

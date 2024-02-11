@@ -17,11 +17,3 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}
       return S.document().views([S.view.form()])
   }
 }
-
-/* 
-
-// URL: (doc: any) => doc?.slug?.current 
-//   ? `http://localhost:3000/api/preview?slug=${doc.slug.current}`
-//  : `http://localhost:3000/api/preview`,
-
-*/
