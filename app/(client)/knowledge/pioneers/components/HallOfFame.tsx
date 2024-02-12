@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { lockersData } from '@/constants/lockersData';
-import styles from '../../styles/components/Hof.module.scss';
 
 const HallOfFame = () => {
   return (
