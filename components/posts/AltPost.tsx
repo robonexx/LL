@@ -16,7 +16,7 @@ const AltPost = ({ post }: { post: PostType }) => {
       {post?.image ? (
         <Image
           src={builder.image(post.image).auto('format').fit('max').url()}
-          alt={post?.image?.alt}
+          alt={post?.title}
           width={300}
           height={300}
         />
