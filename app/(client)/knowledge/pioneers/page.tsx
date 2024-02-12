@@ -1,6 +1,6 @@
 import React from 'react';
 import Headline from '@/components/headline/Headline';
-import HallOfFame from './_components/hallOfFame';
+import HallOfFame from './_components/HallOfFame';
 
 const Curriculum = () => {
   return (
