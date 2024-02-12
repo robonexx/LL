@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
       </div>
       <Image
-        className='hidden xl:max-w-xl object-contain xl:block drop-shadow-2xl rotate-45'
+        className='hidden xl:max-w-xl object-contain xl:block drop-shadow-2xl rotate-12'
         src={heroImg}
         alt='Mavericks flats'
         priority
