@@ -1,3 +1,5 @@
+'use client';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SIDENAV_ITEMS } from '@/constants/navData';
 import { getPages } from '@/sanity/sanity-utils';
@@ -9,42 +11,33 @@ import { PostType } from '@/sanity/types/Post';
 import MenuItem from './menu-item/MenuItem';
 import { capitalizeFirstLetter } from '@/utils/CapitalizeFirstLetter';
 
-/* export const revalidate = 20;
-export const fetchCache = 'force-no-store';
-export const dynamic = 'force-dynamic'; */
+const Sidebar = () => {
+  const [posts, setPosts] = useState<PostType[] | null>(null);
+  const [pages, setPages] = useState<any[]>([]);
 
-const Sidebar = async () => {
-  /*  const [posts, setPosts] = useState<PostType[] | null>(null); */
-
-  /*  useEffect(() => {
-    const fetchPosts = async () => {
+  useEffect(() => {
+    const fetchData = async () => {
       try {
         const fetchedPosts = await getPosts();
         setPosts(fetchedPosts.slice(0, 3));
+
+        const fetchedPages = await getPages();
+        setPages(fetchedPages);
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchPosts();
-  }, []); */
+    fetchData();
+  }, []);
 
-  let fetchedPosts = await getPosts();
-  const posts = await fetchedPosts.slice(0, 3);
-
-  const pages = await getPages();
-
-  // Object transformation
-  // Chnaging the properties so slug becomes path
+  // Combine links from constants and Sanity
   const LINKS = pages.map((p) => ({
     title: capitalizeFirstLetter(p.title),
     path: `${p.slug}`,
   }));
 
-  // Combining the links from contants and sanity
   const combinedLinks = [...LINKS, ...SIDENAV_ITEMS];
-
-  /*  console.log(combinedLinks) */
 
   return (
     <div className='md:w-60 bg-[#ededed] h-screen flex-1 fixed border-r border-zinc-100 hidden md:flex'>

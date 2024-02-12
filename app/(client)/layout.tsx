@@ -3,11 +3,8 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import Header from './_components/Header';
 import HeaderMobile from './_components/Header-mobile';
-import Banner from '@/components/banner/Banner';
 import PageLayoutWrapper from './_components/PageLayoutWrapper';
 import Sidebar from './_components/Sidebar';
-
-
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700'],
@@ -29,14 +26,14 @@ export default async function RootLayout({
       <body className={`${roboto.className}`}>
         <div className='flex max-w-screen'>
           <Sidebar />
-          <main className='flex-1'>
+          <div className='flex-1'>
             <PageLayoutWrapper>
               {<Header />}
               {<HeaderMobile />}
-             
-            {children}
+
+              {children}
             </PageLayoutWrapper>
-          </main>
+          </div>
         </div>
       </body>
     </html>
